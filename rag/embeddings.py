@@ -1,5 +1,13 @@
 from typing import List
 import numpy as np
+# at top of file
+from functools import lru_cache
+
+@lru_cache(maxsize=2)
+def get_embedder(name: str = "sentence-transformers/all-MiniLM-L6-v2"):
+    from .embeddings import EmbeddingModel  # avoid circular import
+    return EmbeddingModel(name)
+
 try:
     from sentence_transformers import SentenceTransformer
 except Exception:

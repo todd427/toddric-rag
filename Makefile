@@ -13,6 +13,15 @@ FILES := $(wildcard $(SRC)/*.txt) $(wildcard $(SRC)/*.md) $(wildcard $(SRC)/*.js
 
 .PHONY: all help venv init db maybe_ingest ingest query clean run-server up down logs
 .PHONY: ask
+
+.PHONY: eval
+eval:
+	$(PY) -m rag.eval --db $(DB) --qa ./eval/memory_quiz.jsonl --k 12 --alpha 0.4 --hybrid
+
+.PHONY: ci
+ci:
+	$(PY) -m rag.gate --db $(DB) --qa ./eval/memory_quiz.jsonl --k 12 --alpha 0.4 --hybrid --min_hit_rate 0.90 --max_avg_ms 4000
+
 ask:
 	$(PY) -m rag.answer --db $(DB) --q "$(Q)" --source-like "memories"
 

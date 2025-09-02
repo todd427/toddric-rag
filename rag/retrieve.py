@@ -63,9 +63,9 @@ def _vec(
     emb_model: str = "sentence-transformers/all-MiniLM-L6-v2",
 ) -> List[Dict]:
     try:
-        from .embeddings import EmbeddingModel
+        from .embeddings import get_embedder
+        emb = get_embedder(emb_model)
 
-        emb = EmbeddingModel(emb_model)
     except Exception:
         return []
 

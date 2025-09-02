@@ -1,0 +1,5 @@
+{"question": "When did I get married?", "must_include": ["1995"]}          # adjust
+{"question": "When did I get divorced?", "must_include": ["2004"]}         # adjust
+{"question": "What timezone do I operate in now?", "any_of": ["Europe/Dublin","Ireland time","IST","GMT"]}
+{"question": "What is AfterWords?", "any_of": ["memorial","message","after death"]}  # write a clean one-liner in FAQ
+{"question": "What is toddric?", "any_of": ["RAG","sms","voice","MVP"]}
