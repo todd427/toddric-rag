@@ -1,0 +1,15 @@
+{"question": "When was I born?", "must_include": ["born"]}
+{"question": "Where was I born?", "must_include": ["born"]}
+{"question": "How am I related to Anne McCaffrey?", "must_include": ["middle child"]}
+{"question": "What is 'Dragonholder' about?", "must_include": ["Dragonholder", "Anne"]}
+{"question": "Which classic novel’s dedication did I worry about being teased for?", "must_include": ["Decision at Doona"]}
+{"question": "What city is central to 'LA Witch'?", "must_include": ["Los Angeles"]}
+{"question": "In 'LA Witch', who says they were looking into Chinese horoscopes?", "must_include": ["Natasha"]}
+{"question": "In the 'Dragon’s Lair' excerpt, who 'fixed' Anna’s age?", "must_include": ["Zeus"]}
+{"question": "Name Anne McCaffrey’s first grandchild mentioned in the text.", "must_include": ["Eliza", "Oriana"]}
+{"question": "What long-running universe am I associated with?", "must_include": ["Pern"]}
+{"question": "What series of mine is referenced by name?", "must_include": ["Crystal"]}
+{"question": "What family surname do I share with Anne?", "must_include": ["McCaffrey"]}
+{"question": "Which date is described as the last square date of the 20th century in a family context?", "must_include": ["9/9/81"]}
+{"question": "In 'Ellay', what does Ellay explicitly say about being born?", "must_include": ["I was born"]}
+

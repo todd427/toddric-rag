@@ -1,0 +1,25 @@
+[project]
+name = "toddric-rag"
+version = "0.1.0"
+description = "Lightweight RAG engine for Toddric/AfterWords (SQLite + FTS5 + sqlite-vec)."
+requires-python = ">=3.10"
+readme = "README.md"
+authors = [{ name = "Toddric Project" }]
+dependencies = [
+  "sentence-transformers>=3.0.0",
+  "numpy>=1.26.0",
+  "ftfy>=6.2.0",
+  "regex>=2024.5.15",
+  "tqdm>=4.66.0",
+  "rapidfuzz>=3.6.0",
+  "fastapi>=0.111.0",
+  "uvicorn>=0.30.0"
+]
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["rag", "rag.*"]
+exclude = ["tests*", "data*", "store*", "bin*", "scripts*", "docs*"]
+

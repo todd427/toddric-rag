@@ -1,0 +1,1 @@
+#!/usr/bin/env bash\npython -m rag.ingest "$@"\n

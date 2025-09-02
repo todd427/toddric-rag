@@ -1,0 +1,1 @@
+db_path: './store/rag.sqlite'\nemb_model: 'sentence-transformers/all-MiniLM-L6-v2'\nchunk:\n  size: 900\n  overlap: 150\n  min_len: 200\nhybrid:\n  use_bm25: true\n  use_vec: true\n  alpha: 0.6\nlimits:\n  k: 5\n  max_ctx_chars: 3500\n

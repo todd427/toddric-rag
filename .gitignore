@@ -1,0 +1,66 @@
+# --- Python / build ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+build/
+dist/
+*.egg-info/
+
+# --- Virtual envs ---
+.venv/
+venv/
+ENV/
+env/
+
+# --- Editors / OS ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Logs / cache ---
+*.log
+logs/
+.cache/
+.pytest_cache/
+
+# --- Local configs & secrets ---
+.env
+.env.*
+*.secret
+secrets.json
+config.local.yaml
+
+# --- Data / models / artifacts (store elsewhere!) ---
+data/
+datasets/
+.ckpts/
+ckpts/
+checkpoints/
+outputs/
+artifacts/
+runs/
+wandb/
+tensorboard/
+
+# Common weight files
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.gguf
+*.tflite
+*.tar
+*.tar.gz
+*.zip
+
+# --- Node/yarn (if any frontend) ---
+node_modules/

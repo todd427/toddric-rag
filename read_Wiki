@@ -1,0 +1,25 @@
+# 1) Pull clean plain text + metadata (title, URL, lastrevid)
+TITLE="Todd McCaffrey"
+URL_T="https://en.wikipedia.org/w/api.php"
+SUMMARY=$(curl -s "$URL_T?action=query&prop=extracts&explaintext=1&redirects=1&format=json&titles=$(printf %s "$TITLE" | sed 's/ /%20/g')" \
+  | jq -r '.query.pages[] | .extract')
+META=$(curl -s "$URL_T?action=query&prop=info&inprop=url|talkid|canonicalurl&format=json&titles=$(printf %s "$TITLE" | sed 's/ /%20/g')" \
+  | jq -r '.query.pages[] | {title:.title, canonicalurl:.canonicalurl, lastrevid:.lastrevid}')
+
+mkdir -p profile
+cat > profile/wiki-todd-mccaffrey.txt <<EOF
+Source: Wikipedia — \$(echo "$META" | jq -r .title)
+URL:    \$(echo "$META" | jq -r .canonicalurl)
+RevID:  \$(echo "$META" | jq -r .lastrevid)
+Retrieved: \$(date -u +%FT%TZ)
+License: CC BY-SA (https://creativecommons.org/licenses/by-sa/4.0/ or https://creativecommons.org/licenses/by-sa/3.0/)
+Notes: This text may be modified downstream (RAG chunking/paraphrase).
+
+$SUMMARY
+EOF
+
+# 2) Build → ingest → check
+../venvs/ragEnv/bin/python -m rag.build --sources "$PWD/profile" --data ./data
+make ingest
+make stats
+

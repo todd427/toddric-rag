@@ -1,0 +1,59 @@
+mkdir -p ./profile
+
+# 1) Core bio facts (easy for RAG to hit)
+cat > ./profile/bio.md <<'MD'
+# Bio
+
+- Full name: Todd Johnson McCaffrey
+- Date of birth: 1956-04-27
+- Birthplace: <City, Region, Country>
+- Birthplace: Montclair, New Jersey, USA
+- Parents: Horace Wright Johnson, Anne Inez McCaffrey
+- Siblings: Alec Anthony Johnson, Georgeanne Johnson
+- Children: Declan Elliott McCaffrey
+- Status: Divorced
+- Residences timeline:
+  - 1956-1958: Montclair, NJ
+  - 1958-1962: Wilmington, DE
+  - 1962-1963: Dusseldorf, Germany
+  - 1963-1965: Wilmington, DE
+  - 1965-1970: Sea Cliff, NY
+  - 1970-1974: Dublin, Ireland
+  - 1974-1975: Bethlehem, PA
+  - 1975-1985: Dublin, Ireland
+  - 1985-2018: Los Angeles, CA
+  - 2018-2025: Las Vegas, NV
+  - 2025-present: Letterkenny, Ireland
+- Education highlights: College Of Technology, Dublin, 1974-1985
+- Education highlights: Clairmount Graduate University, 2016-2018
+- Career highlights: Pilot, Artist, Author
+- Pen names / aliases: Todd Johnson, Talla Hill
+- Pronouns: he/him
+MD
+
+# 2) Life timeline (helps date queries)
+cat > ./profile/timeline.md <<'MD'
+# Timeline (selected)
+
+- 1956-04-27: Born in Montclair, New Jersey.
+- 1958: Moved to Wilmington, DE.
+- 1962: Moved to Dusseldorf, Germany.
+- 1963: Moved to Wilmington, DE.
+- 1965: Moved to Sea Cliff, NY.
+- 1970: Moved to Dublin, Ireland.
+- 1974: Moved to Bethlehem, PA.
+- 1975: Moved to Dublin, Ireland.
+- 1985: Moved to Los Angeles, CA.
+- 2018: Moved to Las Vegas, NV.
+- 1985: First published novel: Slammers Down!.
+- 2005: Co-authored Dragon's Kin.
+- 1985: Started work at Locus Computing Corporation, Santa Monica, CA
+MD
+
+# 3) A tiny FAQ (explicit Q->A in plain text)
+cat > ./profile/faq.jsonl <<'JSONL'
+{"title": "Personal FAQ", "text": "Question: When was Todd Johnson McCaffrey born? Answer: April 27, 1956."}
+{"title": "Personal FAQ", "text": "Question: Where was Todd Johnson McCaffrey born? Answer: Montclair, New Jersey."}
+{"title": "Personal FAQ", "text": "Question: What are Todd's pronouns? Answer: he/him."}
+JSONL
+

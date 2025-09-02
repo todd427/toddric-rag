@@ -1,0 +1,39 @@
+mkdir -p ./profile
+
+# 1) Core bio facts (easy for RAG to hit)
+cat > ./profile/bio.md <<'MD'
+# Bio
+
+- Full name: Todd Johnson McCaffrey
+- Date of birth: <YYYY-MM-DD>
+- Birthplace: <City, Region, Country>
+- Parents: <names>
+- Siblings: <names>
+- Children: <names>
+- Residences timeline:
+  - <YYYY–YYYY>: <City/Country>
+  - <YYYY–YYYY>: <City/Country>
+- Education highlights: <schools, years>
+- Career highlights: <high points>
+- Pen names / aliases: <if any>
+- Pronouns: <he/him etc.>
+MD
+
+# 2) Life timeline (helps date queries)
+cat > ./profile/timeline.md <<'MD'
+# Timeline (selected)
+
+- <YYYY-MM-DD>: Born in <place>.
+- <YYYY>: Moved to <place>.
+- <YYYY>: First published novel: <title>.
+- <YYYY>: Co-authored <work>.
+- <YYYY>: Major move/career change/event.
+MD
+
+# 3) A tiny FAQ (explicit Q->A in plain text)
+cat > ./profile/faq.jsonl <<'JSONL'
+{"title": "Personal FAQ", "text": "Question: When was Todd Johnson McCaffrey born? Answer: <Month D, YYYY>."}
+{"title": "Personal FAQ", "text": "Question: Where was Todd Johnson McCaffrey born? Answer: <City, Country>."}
+{"title": "Personal FAQ", "text": "Question: What are Todd's pronouns? Answer: <he/him>."}
+JSONL
+
