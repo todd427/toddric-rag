@@ -47,7 +47,7 @@ outputs/
 artifacts/
 runs/
 wandb/
-store/
+store/rag.sqlite
 tensorboard/
 
 # Common weight files
