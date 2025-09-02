@@ -22,6 +22,11 @@ eval:
 ci:
 	$(PY) -m rag.gate --db $(DB) --qa ./eval/memory_quiz.jsonl --k 12 --alpha 0.4 --hybrid --min_hit_rate 0.90 --max_avg_ms 4000
 
+.PHONY: warm
+warm:
+	$(PY) -c "from rag.embeddings import get_embedder; get_embedder(); print('embedder warmed')"
+
+
 ask:
 	$(PY) -m rag.answer --db $(DB) --q "$(Q)" --source-like "memories"
 

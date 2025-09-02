@@ -103,10 +103,13 @@ def main():
 
     if total == 0:
         raise SystemExit("No questions found in the QA file.")
+    import math
+    n = len(latencies)
 
     rate = passed / total
-    avg_ms = (sum(latencies) / len(latencies)) * 1000.0 if latencies else 0.0
-    p95_ms = sorted(latencies)[int(0.95 * max(1, len(latencies)-1))] * 1000.0 if latencies else 0.0
+    avg_ms = (sum(latencies)/n)*1000.0 if n else 0.0
+    p95_idx = max(0, math.ceil(0.95*n) - 1)
+    p95_ms = sorted(latencies)[p95_idx]*1000.0 if n else 0.0
 
     print("=" * 60)
     print(f"Total: {total}  Passed: {passed}  Hit-rate: {rate:.0%}")
