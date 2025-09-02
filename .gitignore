@@ -47,6 +47,7 @@ outputs/
 artifacts/
 runs/
 wandb/
+store/
 tensorboard/
 
 # Common weight files
