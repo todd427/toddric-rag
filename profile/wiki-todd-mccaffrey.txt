@@ -1,19 +1,7 @@
-Source: Wikipedia — $(echo "{
-  "title": "Todd McCaffrey",
-  "canonicalurl": "https://en.wikipedia.org/wiki/Todd_McCaffrey",
-  "lastrevid": 1247992684
-}" | jq -r .title)
-URL:    $(echo "{
-  "title": "Todd McCaffrey",
-  "canonicalurl": "https://en.wikipedia.org/wiki/Todd_McCaffrey",
-  "lastrevid": 1247992684
-}" | jq -r .canonicalurl)
-RevID:  $(echo "{
-  "title": "Todd McCaffrey",
-  "canonicalurl": "https://en.wikipedia.org/wiki/Todd_McCaffrey",
-  "lastrevid": 1247992684
-}" | jq -r .lastrevid)
-Retrieved: $(date -u +%FT%TZ)
+Source: Wikipedia — Todd McCaffrey
+URL:    https://en.wikipedia.org/wiki/Todd_McCaffrey
+RevID:  1247992684
+Retrieved: 2025-09-02T22:00:11.811110+00:00
 License: CC BY-SA (https://creativecommons.org/licenses/by-sa/4.0/ or https://creativecommons.org/licenses/by-sa/3.0/)
 Notes: This text may be modified downstream (RAG chunking/paraphrase).
 
